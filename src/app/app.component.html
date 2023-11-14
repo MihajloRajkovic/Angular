@@ -1,0 +1,36 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+    integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+    integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<form class="ui large form segment">
+  <h3 class="ui header">Add a room</h3>
+  <div class="field">
+    <label for="name">Name:</label>
+    <input name="name" id="name" #newname>
+  </div>
+  <br>
+  <div class="field">
+    <label for="type">Type:</label>
+    <input name="type" id="type" #newtype>
+  </div>
+  <br>
+  <div class="field">
+    <label for="id">Id:</label>
+    <input name="id" id="id" #newid> 
+  </div>
+  <br>
+  <div class="field">
+    <label for="price">Price:</label>
+    <input name="price" id="price" #newprice> 
+  </div>
+  <br>
+  <button (click)="addRoom(newid,newname, newtype, newprice)" class="ui positive right floated button">Submit room</button>
+</form>
+<div class="ui grid posts">
+  <app-room *ngFor="let room of rooms" [room]="room"></app-room> 
+
+</div>
